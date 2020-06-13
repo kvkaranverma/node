@@ -13,11 +13,11 @@ yargs.command({
         }
     },
     handler: function(argv) {
-        geoCode(argv.location, (error, data) => {
+        geoCode(argv.location, (error, { latitude, longitude, location } = {}) => {
             if(error) {
                 return console.log(error)
             }
-            forecast(data.latitude, data.longitude, (error, result) => {
+            forecast(latitude, longitude, (error, result) => {
                 if(error) {
                     return console.log(error)
                 }
