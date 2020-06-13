@@ -7,15 +7,24 @@ app.get('', (req, res) => {
 })
 
 app.get('/help', (req, res) => {
-    res.send('Hello, Help page up!')
+    res.send([
+        {
+        name: 'Karan',
+        age: 23
+        },
+        {
+            name: 'Elena',
+            age: 23
+        }
+    ])
 })
 
 app.get('/about', (req, res) => {
-    res.send('Hello, About page up!')
+    res.send('<h2>Hello, About page up!</h2>')
 })
 
 app.get('/weather', (req, res) => {
-    res.send('Hello, Weather page up!')
+    res.send('<h2>Weather page up</h2>')
 })
 
 app.listen(3000, () => {
