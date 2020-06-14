@@ -38,8 +38,20 @@ app.get('/help', (req, res) => {
     })
 })
 
-app.get('/weather', (req, res) => {
-    res.send('<h2>Weather page up</h2>')
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title: '404',
+        name: 'Karan Verma',
+        errorMessage: 'Help article not found'
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        errorMessage: 'Page not found',
+        title: '404 error',
+        name: 'Karan Verma'
+    })
 })
 
 app.listen(3000, () => {
