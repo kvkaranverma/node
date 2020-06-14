@@ -48,6 +48,7 @@ app.get('/help/*', (req, res) => {
     })
 })
 
+
 app.get('/products', (req, res) => {
     if(!req.query.search) {
         return res.send({
